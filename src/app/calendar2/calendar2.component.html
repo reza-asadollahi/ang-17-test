@@ -1,0 +1,20 @@
+<div style="display: flex; width: 50vw;" >
+  <div style="width: 45%; text-align: end">{{month}}</div>
+  <div style="width: 10%; text-align: center">-</div>
+  <div style="width: 45%; text-align: start">{{year}}</div>
+</div>
+<table xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <thead>
+    <tr>
+      <td *ngFor="let weekday of weekdays">{{weekday}}</td>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let week of dateMatrix; let weekIndex = index">
+    <td *ngFor="let day of week">
+      <div>{{day}}</div>
+      <b>{{prices[day] || ''}}</b>
+    </td>
+  </tr>
+  </tbody>
+</table>
